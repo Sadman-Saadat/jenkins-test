@@ -1,6 +1,5 @@
 var supertest = require("supertest");
 var should = require("should");
-var status = 200;
 
 // This agent refers to PORT where the program is running.
 
