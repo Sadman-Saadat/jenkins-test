@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/Sadman-Saadat/jenkins-test#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "sonarqube": "^0.0.1"
   },
   "devDependencies": {
     "jest": "^28.1.3",
