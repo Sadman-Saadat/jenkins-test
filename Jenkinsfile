@@ -25,8 +25,10 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                   def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
-                    sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+                    script {
+                        def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
+                        sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+                    }
                 } // submitted SonarQube taskId is automatically attached to the pipeline context
             }
         }
