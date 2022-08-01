@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "node app.js"
+    "start": "node app.js",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha --dir ./reports/coverage"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "gradle": "^1.2.4",
+    "istanbul": "^0.4.5",
     "sonarqube": "^0.0.1"
   },
   "devDependencies": {

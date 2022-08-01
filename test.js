@@ -34,6 +34,16 @@ describe('#foo()', function(){
   });
 })
 
-test("Hello World", () =>{
-  expect(true).toBe(true);
-});
+
+
+
+
+
+// var server = supertest.agent("http://localhost:6000");
+
+// const checkString = require('./app');
+
+// describe("Hello", function(){
+//   //expect(checkString).toContain('Hello World');
+//   server.get("/").expect("Content-type",/text/)
+// });
