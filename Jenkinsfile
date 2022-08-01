@@ -24,7 +24,9 @@ pipeline {
         }
         
         stage ("Extract test results") {
-            cobertura coberturaReportFile: 'path-to/coverage.xml'
+            steps {
+                cobertura coberturaReportFile: 'path-to/coverage.xml'
+            }
         }
         
         stage('build && SonarQube analysis') {
