@@ -33,3 +33,7 @@ describe('#foo()', function(){
     assert.equal(1, 1);
   });
 })
+
+test("Hello World", () =>{
+  expect(true).toBe(true);
+});
