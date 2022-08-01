@@ -19,14 +19,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm install'
+                sh 'npm test'
             }
         }
-        stage('SonarQube analysis') {
+        stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'chmod +x gradlew'
-                    sh "./gradlew sonarqube"
+                    // Optionally use a Maven environment you've configured already
+                    withMaven(maven:'Maven 3.6.0') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
                 }
             }
         }
