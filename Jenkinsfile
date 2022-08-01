@@ -26,7 +26,7 @@ pipeline {
         stage ("Extract test results") {
             steps {
                 script {
-                    cobertura coberturaReportFile: 'cobertura coberturaReportFile: '/coverage.xml''
+                    sh 'npm run cover'
                 }
             }
         }
