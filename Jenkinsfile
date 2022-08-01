@@ -22,6 +22,11 @@ pipeline {
                 sh 'npm test'
             }
         }
+        
+        stage ("Extract test results") {
+            cobertura coberturaReportFile: 'path-to/coverage.xml'
+        }
+        
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
