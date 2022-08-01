@@ -26,8 +26,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     script {
-                        def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
-                        sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+                        sh 'mvn clean package sonar:sonar'
                     }
                 } // submitted SonarQube taskId is automatically attached to the pipeline context
             }
