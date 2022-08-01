@@ -25,7 +25,7 @@ pipeline {
         
         stage ("Extract test results") {
             steps {
-                cobertura coberturaReportFile: 'path-to/coverage.xml'
+                cobertura coberturaReportFile: '/var/jenkins_home/workspace/jenkins-test-2/coverage.xml'
             }
         }
         
