@@ -22,13 +22,14 @@ pipeline {
                 sh 'npm test'
             }
         }
-        stage('SonarQube analysis') {
+        stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    script {
+                    // Optionally use a Maven environment you've configured already
+                    withMaven(maven:'Maven 3.5') {
                         sh 'mvn clean package sonar:sonar'
                     }
-                } // submitted SonarQube taskId is automatically attached to the pipeline context
+                }
             }
         }
         stage("Quality gate") {
